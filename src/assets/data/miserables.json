@@ -1,0 +1,11 @@
+{
+  "nodes": [
+    {"id": "Myriel", "group": "1"},
+    {"id": "Labarre", "group": "2"},
+    {"id": "Marguerite", "group": "3"}
+  ],
+  "links": [
+    {"source": "Myriel", "target": "Labarre", "value": 10},
+    {"source": "Labarre", "target": "Marguerite", "value": 10}
+  ]
+}

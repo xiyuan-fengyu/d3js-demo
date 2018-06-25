@@ -1,0 +1,14 @@
+{
+  "name": "download",
+  "author": "xiyuan_fengyu <xiyuan_fengyu@163.com> (https://github.com/xiyuan-fengyu)",
+  "scripts": {},
+  "keywords": [],
+  "dependencies": {
+    "request": "^2.85.0",
+    "typescript": "^2.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.7",
+    "@types/request": "^2.47.0"
+  }
+}
