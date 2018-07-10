@@ -29,12 +29,18 @@ import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BorderMeshComponent } from './page/border-mesh/border-mesh.component';
 import { ForceDirectedGraphComponent } from './page/force-directed-graph/force-directed-graph.component';
+import { PlaygroundComponent } from './page/playground/playground.component';
+import { ContourComponent } from './page/contour/contour.component';
+import { RefreshableContourComponent } from './page/refreshable-contour/refreshable-contour.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BorderMeshComponent,
     ForceDirectedGraphComponent,
+    PlaygroundComponent,
+    ContourComponent,
+    RefreshableContourComponent,
   ],
   imports: [
     BrowserModule,
