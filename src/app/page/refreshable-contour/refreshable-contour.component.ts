@@ -44,7 +44,7 @@ export class RefreshableContourComponent implements OnInit, OnDestroy {
       const refresh = (refreshData: boolean = true) => {
         const intValues = [];
         for (let i = 0, len = dataValues.length; i < len; i++) {
-          if (refreshData) dataValues[i] += (1 - Math.random() * 2) * 0.1;
+          if (refreshData) dataValues[i] += Math.random() * 0.5;
           intValues[i] = +dataValues[i].toFixed(0);
         }
 
@@ -63,7 +63,7 @@ export class RefreshableContourComponent implements OnInit, OnDestroy {
           .attr("d", d3.geoPath(d3.geoIdentity().scale(width / data.width)))
           .attr("fill", d => color(d.value));
       };
-      this.refreshInterval = setInterval(refresh, 1000);
+      this.refreshInterval = setInterval(refresh, 500);
       refresh(false);
     });
   }

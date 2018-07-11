@@ -4,6 +4,7 @@ import {ForceDirectedGraphComponent} from './page/force-directed-graph/force-dir
 import {PlaygroundComponent} from './page/playground/playground.component';
 import {ContourComponent} from './page/contour/contour.component';
 import {RefreshableContourComponent} from './page/refreshable-contour/refreshable-contour.component';
+import {AirlineComponent} from './page/airline/airline.component';
 
 export const demos = [
   {
@@ -30,6 +31,11 @@ export const demos = [
     label: "Refreshable Contour",
     path: "refreshableContour",
     component: RefreshableContourComponent
+  },
+  {
+    label: "Airline",
+    path: "airline",
+    component: AirlineComponent
   },
 ];
 

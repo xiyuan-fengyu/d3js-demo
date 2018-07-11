@@ -32,6 +32,7 @@ import { ForceDirectedGraphComponent } from './page/force-directed-graph/force-d
 import { PlaygroundComponent } from './page/playground/playground.component';
 import { ContourComponent } from './page/contour/contour.component';
 import { RefreshableContourComponent } from './page/refreshable-contour/refreshable-contour.component';
+import { AirlineComponent } from './page/airline/airline.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RefreshableContourComponent } from './page/refreshable-contour/refresha
     PlaygroundComponent,
     ContourComponent,
     RefreshableContourComponent,
+    AirlineComponent,
   ],
   imports: [
     BrowserModule,
