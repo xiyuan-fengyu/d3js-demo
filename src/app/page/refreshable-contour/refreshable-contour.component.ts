@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import * as d3 from 'd3';
+import {values} from 'd3-collection';
 
 @Component({
   selector: 'app-refreshable-contour',
   templateUrl: './refreshable-contour.component.html',
   styleUrls: ['./refreshable-contour.component.css']
 })
-export class RefreshableContourComponent implements OnInit {
+export class RefreshableContourComponent implements OnInit, OnDestroy {
+
+  private refreshInterval: any;
 
   constructor() { }
 
@@ -20,24 +23,53 @@ export class RefreshableContourComponent implements OnInit {
     const color = d3.scaleSequential(interpolateTerrain).domain([90, 190]);
 
     d3.json("/assets/data/volcano.json").then((data: any) => {
-      let values = data.values;
-      // @TODO 利用transcation做渐变效果
+      // let dataValues = data.dataValues;
+      // const refresh = (refreshData: boolean = true) => {
+      //   if (refreshData) dataValues = dataValues.map(d => d + parseInt("" + ((1 - Math.random() * 2) * 2), 10));
+      //   svg.selectAll("path").exit().remove()
+      //     .data(
+      //       d3.contours()
+      //         .size([data.width, data.height])
+      //         .thresholds(d3.range(90, 195, 5))
+      //         (dataValues)
+      //     )
+      //     .enter()
+      //     .append("path").attr("d", d3.geoPath(d3.geoIdentity().scale(width / data.width)))
+      //     .attr("fill", d => color(d.value));
+      // };
+      // this.refreshInterval = setInterval(refresh, 1000);
+      // refresh(false);
+
+      const dataValues = data.values;
       const refresh = (refreshData: boolean = true) => {
-        if (refreshData) values = values.map(d => d + parseInt("" + ((1 - Math.random() * 2) * 2), 10));
-        svg.selectAll("path").exit().remove()
+        const intValues = [];
+        for (let i = 0, len = dataValues.length; i < len; i++) {
+          if (refreshData) dataValues[i] += (1 - Math.random() * 2) * 0.1;
+          intValues[i] = +dataValues[i].toFixed(0);
+        }
+
+        svg
+          .selectAll("path")
+          .exit()
+          .remove()
           .data(
             d3.contours()
               .size([data.width, data.height])
-              .thresholds(d3.range(90, 195, 8))
-              (values)
+              .thresholds(d3.range(90, 195, 5))
+              (intValues)
           )
           .enter()
-          .append("path").attr("d", d3.geoPath(d3.geoIdentity().scale(width / data.width)))
+          .append("path")
+          .attr("d", d3.geoPath(d3.geoIdentity().scale(width / data.width)))
           .attr("fill", d => color(d.value));
       };
-      setInterval(refresh, 1000);
+      this.refreshInterval = setInterval(refresh, 1000);
       refresh(false);
     });
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.refreshInterval);
   }
 
 }
