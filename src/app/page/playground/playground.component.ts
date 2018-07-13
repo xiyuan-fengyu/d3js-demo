@@ -19,7 +19,7 @@ export class PlaygroundComponent implements OnInit {
     // const interpolateTerrain = t => t < 0.5 ? i0(t * 2) : i1((t - 0.5) * 2);
     // const color = d3.scaleSequential(interpolateTerrain).domain([90, 190]);
     //
-    // d3.json("/assets/data/volcano.json").then((data: any) => {
+    // d3.json("assets/data/volcano.json").then((data: any) => {
     //   svg.selectAll("path").data(
     //     d3.contours()
     //       .size([data.width, data.height])

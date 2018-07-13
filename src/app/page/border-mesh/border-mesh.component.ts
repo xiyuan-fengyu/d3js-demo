@@ -16,7 +16,7 @@ export class BorderMeshComponent implements OnInit {
 
     const path = d3.geoPath();
 
-    d3.json("/assets/data/us-10m.v1.json").then((us: any) => {
+    d3.json("assets/data/us-10m.v1.json").then((us: any) => {
       svg.append("g")
         .attr("fill", "#b2b2b2")
         .selectAll("path")

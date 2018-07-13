@@ -100,9 +100,9 @@ export class AirlineComponent implements OnInit, AfterViewInit, OnDestroy {
     this.onResize();
 
     Promise.all([
-      d3.text('/assets/data/airplane.svg.txt'),
-      d3.json('/assets/data/airports2.topo.json'),
-      d3.json('/assets/data/countries2.topo.json')
+      d3.text('assets/data/airplane.svg.txt'),
+      d3.json('assets/data/airports2.topo.json'),
+      d3.json('assets/data/countries2.topo.json')
     ]).then(res => {
       this.airplaneSvgPath = res[0];
       const airports: any = res[1];

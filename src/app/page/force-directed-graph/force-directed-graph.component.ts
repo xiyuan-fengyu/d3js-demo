@@ -39,7 +39,7 @@ export class ForceDirectedGraphComponent implements OnInit {
       d.fy = null;
     }
 
-    d3.json("/assets/data/miserables.json").then((graph: any) => {
+    d3.json("assets/data/miserables.json").then((graph: any) => {
       const link = svg.append("g")
         .attr("class", "links")
         .selectAll("line")

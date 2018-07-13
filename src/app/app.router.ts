@@ -7,26 +7,26 @@ import {RefreshableContourComponent} from './page/refreshable-contour/refreshabl
 import {AirlineComponent} from './page/airline/airline.component';
 
 export const demos = [
-  {
-    label: "Playground",
-    path: "playground",
-    component: PlaygroundComponent
-  },
-  {
-    label: "Border Mesh",
-    path: "borderMesh",
-    component: BorderMeshComponent
-  },
-  {
-    label: "Force-Directed Graph",
-    path: "forceDirectedGraph",
-    component: ForceDirectedGraphComponent
-  },
-  {
-    label: "Contour",
-    path: "contour",
-    component: ContourComponent
-  },
+  // {
+  //   label: "Playground",
+  //   path: "playground",
+  //   component: PlaygroundComponent
+  // },
+  // {
+  //   label: "Border Mesh",
+  //   path: "borderMesh",
+  //   component: BorderMeshComponent
+  // },
+  // {
+  //   label: "Force-Directed Graph",
+  //   path: "forceDirectedGraph",
+  //   component: ForceDirectedGraphComponent
+  // },
+  // {
+  //   label: "Contour",
+  //   path: "contour",
+  //   component: ContourComponent
+  // },
   {
     label: "Refreshable Contour",
     path: "refreshableContour",

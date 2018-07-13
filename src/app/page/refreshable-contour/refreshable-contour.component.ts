@@ -22,7 +22,7 @@ export class RefreshableContourComponent implements OnInit, OnDestroy {
     const interpolateTerrain = t => t < 0.5 ? i0(t * 2) : i1((t - 0.5) * 2);
     const color = d3.scaleSequential(interpolateTerrain).domain([90, 190]);
 
-    d3.json("/assets/data/volcano.json").then((data: any) => {
+    d3.json("assets/data/volcano.json").then((data: any) => {
       // let dataValues = data.dataValues;
       // const refresh = (refreshData: boolean = true) => {
       //   if (refreshData) dataValues = dataValues.map(d => d + parseInt("" + ((1 - Math.random() * 2) * 2), 10));
